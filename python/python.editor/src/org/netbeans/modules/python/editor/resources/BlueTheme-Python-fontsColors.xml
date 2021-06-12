@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<!DOCTYPE fontscolors PUBLIC "-//NetBeans//DTD Editor Fonts and Colors settings 1.1//EN" "http://www.netbeans.org/dtds/EditorFontsColors-1_1.dtd">
+
+<fontscolors>
+    <fontcolor name="COMMENT" default="comment" />
+    <fontcolor name="INT_LITERAL" default="number"/>
+    <fontcolor name="FLOAT_LITERAL" default="number"/>
+    <fontcolor name="ANY_OPERATOR" default="8AA6C1"/>
+    <fontcolor name="STRING_BEGIN" default="string"/>
+    <fontcolor name="STRING_END" default="string"/>
+    <fontcolor name="STRING_LITERAL" default="string"/>
+    <fontcolor name="ERROR" default="error"/>
+    <fontcolor name="IDENTIFIER" default="identifier"/>
+    <fontcolor name="WHITESPACE" default="whitespace"/>
+    <fontcolor name="ANY_KEYWORD" default="keyword"/>
+    <fontcolor name="TODO" foreColor="ff99006b">
+        <font style="bold"/>
+    </fontcolor>
+    <fontcolor foreColor="green" name="BOOL">
+        <font style="bold"/>
+    </fontcolor>
+    <fontcolor name="BUILTIN_FUNCTION" foreColor="cyan" />
+
+    <!--"semantic" highlighting:-->
+    <fontcolor name="mod-unused" waveUnderlined="ff8888"/>
+    <fontcolor name="mod-parameter" foreColor="8AA6C1"/>
+    <fontcolor name="mod-method">
+        <font style="italic" />
+    </fontcolor>
+    <fontcolor name="mod-class" />
+    <fontcolor name="mod-deprecated" strikeThrough="404040" />
+    <fontcolor name="mark-occurrences" bgColor="38566F"/>
+
+    <!-- Code Coverage (not supported yet) -->
+<!--    <fontcolor name="covered" bgColor="ff122e31"/>
+    <fontcolor name="uncovered" bgColor="ff321e31"/>
+    <fontcolor name="inferred" bgColor="ff122831"/>-->
+    
+</fontscolors>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+
+<project name="python" default="everything" basedir="..">
+    <property name="nbroot" location="."/>
+
+    <target name="gsf">
+        <ant dir="${nbroot}/nbbuild" target="init"/>
+        <subant target="netbeans" inheritAll="false">
+            <property name="scan.binaries" value="true"/>
+            
+            <buildpath location="gsf.api"/>
+            <buildpath location="gsfpath.api"/>
+            <buildpath location="gsf"/>
+            <buildpath location="gsf.testrunner"/>
+            <buildpath location="gsf.codecoverage"/>
+            
+        </subant>
+        <!-- ruby/gsf/tools is for module development purposes only
+        <subant target="netbeans" inheritAll="false">
+            <property name="scan.binaries" value="true"/>
+            <buildpath location="gsf/tools" />
+        </subant>
+        -->
+    </target>
+    
+    <target name="python">
+        <ant dir="${nbroot}/nbbuild" target="init"/>
+        <subant target="netbeans" inheritAll="false">
+            <property name="scan.binaries" value="true"/>
+            
+            <buildpath location="o.jython.distro"/>
+            <buildpath location="o.jython"/>
+            <buildpath location="python.core"/>
+            <buildpath location="python.debugger"/>
+            <buildpath location="python.platform"/>
+            <buildpath location="python.console"/>
+            <buildpath location="python.editor"/>
+            <buildpath location="python.project"/>
+            <buildpath location="python.help"/>
+            <buildpath location="python.options"/>
+            <buildpath location="python.testrunner"/>
+            <buildpath location="python.kit"/>
+        </subant>
+    </target>
+
+<!--    <target name="everything" depends="gsf,python"/>-->
+    <target name="everything" depends="python"/>
+
+    <target name="clean">
+        <ant dir="${nbroot}/nbbuild" target="init"/>
+        <subant target="clean" inheritAll="false">
+            <property name="scan.binaries" value="true"/>            
+            
+            <buildpath location="gsf.api"/>
+            <buildpath location="gsfpath.api"/>
+            <buildpath location="gsf"/>
+            <buildpath location="gsf.testrunner"/>
+            <buildpath location="gsf.codecoverage"/>
+
+            <buildpath location="o.jython.distro"/>
+            <buildpath location="o.jython"/>
+            <buildpath location="python.editor"/>
+            <buildpath location="python.console"/>
+            <buildpath location="python.core"/>
+            <buildpath location="python.debugger"/>
+            <buildpath location="python.editor"/>
+            <buildpath location="python.help"/>
+            <buildpath location="python.platform"/>
+            <buildpath location="python.project"/>
+            <buildpath location="python.options"/>
+            <buildpath location="python.testrunner"/>
+            <buildpath location="python.kit"/>
+        </subant>
+    </target>
+    
+    <target name="runtests" description="Run Python tests">
+        <subant buildpath="python.editor:python.core:python.debugger:python.project:python.testrunner"
+            target="test"
+            inheritall="false"
+            inheritrefs="false">
+            <property name="continue.after.failing.tests" value="true"/>
+        </subant>
+    </target>
+</project>
+
